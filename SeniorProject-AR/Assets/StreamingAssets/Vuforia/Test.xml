@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Foto_Bora" size="0.200000 0.267897" />
+    <ImageTarget name="Foto_Irem" size="0.050000 0.066949" />
+    <ImageTarget name="Foto_Ipek" size="0.050000 0.066637" />
+    <ImageTarget name="Foto_IB" size="0.080000 0.106667" />
+    <ImageTarget name="stones" size="50.000000 35.000000" />
+  </Tracking>
+</QCARConfig>
