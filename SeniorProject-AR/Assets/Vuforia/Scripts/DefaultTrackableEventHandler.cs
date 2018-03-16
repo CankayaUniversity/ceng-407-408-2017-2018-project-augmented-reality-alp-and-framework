@@ -8,12 +8,14 @@ Confidential and Proprietary - Protected under copyright and other laws.
 
 using UnityEngine;
 using Vuforia;
+using System.Data;
 
 /// <summary>
 ///     A custom handler that implements the ITrackableEventHandler interface.
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
+    private DataLoader dl = new DataLoader();
     #region PRIVATE_MEMBER_VARIABLES
 
     protected TrackableBehaviour mTrackableBehaviour;
@@ -27,6 +29,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
+        
+        dl.Start();
     }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -84,6 +88,23 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Enable canvas':
         foreach (var component in canvasComponents)
             component.enabled = true;
+
+        int indexOfBORA = -1;
+
+        if (mTrackableBehaviour.TrackableName=="Foto_Bora")
+        {
+            int i = 0;
+            foreach (DataRow row in dl.dtPERSON.Rows)
+            {
+                if(row["ARFotoName"].ToString().Equals("Foto_Bora"))
+                {
+                    indexOfBORA = i;
+                }
+                i++;
+            }
+        }
+        Debug.Log(indexOfBORA);
+        Debug.Log(dl.myPeople[indexOfBORA].Department1);
     }
 
 

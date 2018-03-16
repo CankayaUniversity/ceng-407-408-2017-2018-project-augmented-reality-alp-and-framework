@@ -535,7 +535,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Foto_IremMaterial
+  m_Name: Foto_BoraMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -548,7 +548,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: daf6fda05d80487cb3cd5e4624ab378d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2fe134df6afb4b6a9ec68d9e54669501, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1339,7 +1339,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.37341854, y: 0, z: 0.5}
+      m_Extent: {x: 0.37327778, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1392,7 +1392,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: b730bfbe00000000000000bf000000000000803f000000000000000000000000b730bfbe000000000000003f000000000000803f00000000000000000000803fb730bf3e00000000000000bf000000000000803f000000000000803f00000000b730bf3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 441ebfbe00000000000000bf000000000000803f000000000000000000000000441ebfbe000000000000003f000000000000803f00000000000000000000803f441ebf3e00000000000000bf000000000000803f000000000000803f00000000441ebf3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1708,7 +1708,7 @@ Transform:
   m_GameObject: {fileID: 1989688517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.066949, y: 0.066949, z: 0.066949}
+  m_LocalScale: {x: 0.267897, y: 0.267897, z: 0.267897}
   m_Children:
   - {fileID: 106522372}
   m_Father: {fileID: 62973509}
@@ -1788,12 +1788,12 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Foto_Irem
+  mTrackableName: Foto_Bora
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 1.3389801
+  mAspectRatio: 1.339485
   mImageTargetType: 0
-  mWidth: 0.05
-  mHeight: 0.066949
+  mWidth: 0.2
+  mHeight: 0.267897
