@@ -303,6 +303,7 @@ public class DataLoader : MonoBehaviour
     public List<PROJECT> myProjects = new List<PROJECT>();
 
     public DataTable dtPERSON = new DataTable();
+    public DataTable dtPERSONTASK = new DataTable();
 
     public void Start()
     {
@@ -314,7 +315,7 @@ public class DataLoader : MonoBehaviour
 
         using (SqlConnection dbCon = new SqlConnection(connectionString))
         {
-            SqlCommand cmd;
+            SqlCommand cmdPerson;
             try
             {
                 dbCon.Open();
@@ -322,17 +323,16 @@ public class DataLoader : MonoBehaviour
 
                 string query1 = "SELECT *FROM PERSON";
 
-                cmd = new SqlCommand(query1, dbCon);
-                int res = cmd.ExecuteNonQuery();
+                cmdPerson = new SqlCommand(query1, dbCon);
+                int res = cmdPerson.ExecuteNonQuery();
 
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlDataReader reader = cmdPerson.ExecuteReader())
                 {
                     Debug.Log("Reader works");
 
                     PERSON tempPerson;
                     int persID;
                     string name, surname, outlookmail, password, title, dept, team, speciality, persinfo, arfoto;
-                    
 
                     dtPERSON.Load(reader);
 
@@ -362,6 +362,48 @@ public class DataLoader : MonoBehaviour
                 throw;
             }
         }
+        using (SqlConnection dbCon2 = new SqlConnection(connectionString))
+        {
+            SqlCommand cmdPersonTask;
+            try
+            {
+                dbCon2.Open();
+                Debug.Log("Connection opened succesfully");
 
+                string query2 = "SELECT *FROM PERSONTASK";
+
+                cmdPersonTask = new SqlCommand(query2, dbCon2);
+                int res2 = cmdPersonTask.ExecuteNonQuery();
+
+                using (SqlDataReader reader2 = cmdPersonTask.ExecuteReader())
+                {
+                    Debug.Log("Reader2 works");
+
+                    PERSONTASK tempPersonTask;
+
+                    int taskID, personID, projectID;
+                    string taskName;
+
+                    dtPERSONTASK.Load(reader2);
+
+                    foreach (DataRow row in dtPERSONTASK.Rows)
+                    {
+                        tempPersonTask = null;
+                        taskID = int.Parse(row["TaskID"].ToString());
+                        personID = int.Parse(row["PersonID"].ToString());
+                        taskName = row["TaskName"].ToString();
+                        projectID = int.Parse(row["ProjectID"].ToString());
+                        tempPersonTask = new PERSONTASK(taskID, personID, taskName, projectID);
+                        myPersonTaskList.Add(tempPersonTask);
+                    }
+                }
+
+            }
+            catch (System.Exception e2)
+            {
+                Debug.Log(e2.Message);
+                throw;
+            }
+        }
     }
 }

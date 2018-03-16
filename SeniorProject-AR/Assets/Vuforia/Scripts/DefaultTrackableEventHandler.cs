@@ -26,6 +26,14 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     private VideoSource videoSource;
     private AudioSource audioSource;
 
+    public Text txtName;
+    public Text txtTitle;
+    public Text txtDepartment;
+    public Text txtPersonalInfo;
+    public Text txtSpeciality;
+    public Text txtDevTeam;
+    public Text txtCurrentTasks;
+
     #region PRIVATE_MEMBER_VARIABLES
 
     protected TrackableBehaviour mTrackableBehaviour;
@@ -39,7 +47,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
-        
+
         dl.Start();
     }
 
@@ -99,23 +107,46 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         foreach (var component in canvasComponents)
             component.enabled = true;
 
-        int indexOfBORA = -1;
+        int indexOfPerson = -1;
 
-        if (mTrackableBehaviour.TrackableName=="Foto_Bora")
+        int i = 0;
+        foreach (DataRow row in dl.dtPERSON.Rows)
         {
-            int i = 0;
-            foreach (DataRow row in dl.dtPERSON.Rows)
+            if (row["ARFotoName"].ToString().Equals(mTrackableBehaviour.TrackableName))
             {
-                if(row["ARFotoName"].ToString().Equals("Foto_Bora"))
-                {
-                    indexOfBORA = i;
-                }
-                i++;
+                indexOfPerson = i;
+                break;
             }
-            StartCoroutine(playVideo());
+            i++;
         }
-        Debug.Log(indexOfBORA);
-        Debug.Log(dl.myPeople[indexOfBORA].Department1);
+
+        this.txtName.text = dl.myPeople[indexOfPerson].Name1 + " " + dl.myPeople[indexOfPerson].Surname1;
+        this.txtTitle.text = dl.myPeople[indexOfPerson].Title1;
+        this.txtDepartment.text = dl.myPeople[indexOfPerson].Department1;
+        this.txtPersonalInfo.text = dl.myPeople[indexOfPerson].PersonalInfo1;
+        this.txtSpeciality.text = dl.myPeople[indexOfPerson].Speciality1;
+        this.txtDevTeam.text = dl.myPeople[indexOfPerson].Team1;
+        this.txtCurrentTasks.text = "";
+
+        int ind = 0;
+        foreach (DataRow row in dl.dtPERSONTASK.Rows)
+        {
+            int persID = int.Parse(row["PersonID"].ToString());
+            if (persID==dl.myPeople[indexOfPerson].PersonID1)
+            {
+                if (ind==0)
+                {
+                    this.txtCurrentTasks.text = this.txtCurrentTasks.text + row["TaskName"].ToString();
+                }
+                else
+                {
+                    this.txtCurrentTasks.text = this.txtCurrentTasks.text + "\n" + row["TaskName"].ToString();
+                }
+            }
+            ind++;
+        }
+
+        StartCoroutine(playVideo());
     }
 
 
