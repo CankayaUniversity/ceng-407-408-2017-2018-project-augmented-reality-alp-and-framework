@@ -9,6 +9,9 @@ Confidential and Proprietary - Protected under copyright and other laws.
 using UnityEngine;
 using Vuforia;
 using System.Data;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 /// <summary>
 ///     A custom handler that implements the ITrackableEventHandler interface.
@@ -16,6 +19,13 @@ using System.Data;
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
     private DataLoader dl = new DataLoader();
+
+    public RawImage image;
+    public VideoClip videoToPlay;
+    private VideoPlayer videoPlayer;
+    private VideoSource videoSource;
+    private AudioSource audioSource;
+
     #region PRIVATE_MEMBER_VARIABLES
 
     protected TrackableBehaviour mTrackableBehaviour;
@@ -102,6 +112,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
                 }
                 i++;
             }
+            StartCoroutine(playVideo());
         }
         Debug.Log(indexOfBORA);
         Debug.Log(dl.myPeople[indexOfBORA].Department1);
@@ -125,6 +136,47 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
+    }
+
+    IEnumerator playVideo()
+    {
+        videoPlayer = gameObject.AddComponent<VideoPlayer>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        videoPlayer.playOnAwake = false;
+        audioSource.playOnAwake = false;
+        audioSource.Pause();
+
+        videoPlayer.source = VideoSource.VideoClip;
+        videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+        videoPlayer.EnableAudioTrack(0, true);
+        videoPlayer.SetTargetAudioSource(0, audioSource);
+        videoPlayer.clip = videoToPlay;
+        videoPlayer.Prepare();
+        //Wait until video is prepared
+        while (!videoPlayer.isPrepared)
+        {
+            yield return null;
+        }
+
+        Debug.Log("Done Preparing Video");
+
+        //Assign the Texture from Video to RawImage to be displayed
+        image.texture = videoPlayer.texture;
+
+        //Play Video
+        videoPlayer.Play();
+
+        //Play Sound
+        audioSource.Play();
+
+        Debug.Log("Playing Video");
+        while (videoPlayer.isPlaying)
+        {
+            Debug.LogWarning("Video Time: " + Mathf.FloorToInt((float)videoPlayer.time));
+            yield return null;
+        }
+
+        Debug.Log("Done Playing Video");
     }
 
     #endregion // PRIVATE_METHODS
