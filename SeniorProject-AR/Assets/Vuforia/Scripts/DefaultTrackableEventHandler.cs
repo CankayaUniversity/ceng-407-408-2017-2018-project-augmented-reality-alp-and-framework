@@ -34,6 +34,9 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtDevTeam;
     public Text txtCurrentTasks;
 
+    public Toggle button;
+    public int counter = 0;
+
     #region PRIVATE_MEMBER_VARIABLES
 
     protected TrackableBehaviour mTrackableBehaviour;
@@ -107,6 +110,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         foreach (var component in canvasComponents)
             component.enabled = true;
 
+        counter = 0;
+
         int indexOfPerson = -1;
 
         int i = 0;
@@ -146,7 +151,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             ind++;
         }
 
-        StartCoroutine(playVideo());
+        //StartCoroutine(playVideo());
     }
 
 
@@ -167,6 +172,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
+
+        stopVideo();
     }
 
     IEnumerator playVideo()
@@ -208,6 +215,42 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         }
 
         Debug.Log("Done Playing Video");
+    }
+
+    public void stopVideo()
+    {
+        videoPlayer = gameObject.AddComponent<VideoPlayer>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        if (videoPlayer.isPlaying)
+        {
+            videoPlayer.Stop();
+            audioSource.Stop();
+        }
+        counter = 0;
+    }
+
+    public void playPauseVideo()
+    {
+        counter++;
+
+        if(counter==1)
+        {
+            StartCoroutine(playVideo());
+        }
+
+        else if (counter % 2 == 0)
+        {
+            videoPlayer.Pause();
+            audioSource.Pause();
+            button.isOn = true;
+        }
+
+        else
+        {
+            videoPlayer.Play();
+            audioSource.Play();
+            button.isOn = false;
+        }
     }
 
     #endregion // PRIVATE_METHODS
