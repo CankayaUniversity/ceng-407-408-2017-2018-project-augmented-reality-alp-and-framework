@@ -172,8 +172,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
-
-        stopVideo();
+        if (videoPlayer != null && videoPlayer.isPlaying)
+            stopVideo();
     }
 
     IEnumerator playVideo()
@@ -208,19 +208,19 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         audioSource.Play();
 
         Debug.Log("Playing Video");
-        while (videoPlayer.isPlaying)
-        {
-            Debug.LogWarning("Video Time: " + Mathf.FloorToInt((float)videoPlayer.time));
-            yield return null;
-        }
+        //while (videoPlayer.isPlaying)
+        //{
+        //    Debug.LogWarning("Video Time: " + Mathf.FloorToInt((float)videoPlayer.time));
+        //    yield return null;
+        //}
 
         Debug.Log("Done Playing Video");
     }
 
     public void stopVideo()
     {
-        videoPlayer = gameObject.AddComponent<VideoPlayer>();
-        audioSource = gameObject.AddComponent<AudioSource>();
+        //videoPlayer = gameObject.AddComponent<VideoPlayer>();
+        //audioSource = gameObject.AddComponent<AudioSource>();
         if (videoPlayer.isPlaying)
         {
             videoPlayer.Stop();
