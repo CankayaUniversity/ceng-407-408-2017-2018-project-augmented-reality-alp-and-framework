@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 11563332}
   - component: {fileID: 11563331}
   m_Layer: 5
-  m_Name: SharedTasks
+  m_Name: TxtSharedTasks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 465051242}
   - component: {fileID: 465051241}
   m_Layer: 5
-  m_Name: CurrentTasks
+  m_Name: TxtCurrentTasks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 845037572}
   - component: {fileID: 845037571}
   m_Layer: 5
-  m_Name: SharedTaskItem
+  m_Name: TxtSharedTaskItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 904614462}
   - component: {fileID: 904614461}
   m_Layer: 5
-  m_Name: Current TaskItem
+  m_Name: TxtCurrent TaskItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
