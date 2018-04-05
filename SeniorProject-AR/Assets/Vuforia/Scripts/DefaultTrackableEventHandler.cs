@@ -12,6 +12,7 @@ using System.Data;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 ///     A custom handler that implements the ITrackableEventHandler interface.
@@ -110,48 +111,53 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         foreach (var component in canvasComponents)
             component.enabled = true;
 
-        counter = 0;
+        Scene scene = SceneManager.GetActiveScene();
 
-        int indexOfPerson = -1;
-
-        int i = 0;
-        foreach (DataRow row in dl.dtPERSON.Rows)
+        if (scene.name == "OrientationMode")
         {
-            if (row["ARFotoName"].ToString().Equals(mTrackableBehaviour.TrackableName))
+            counter = 0;
+
+            int indexOfPerson = -1;
+
+            int i = 0;
+            foreach (DataRow row in dl.dtPERSON.Rows)
             {
-                indexOfPerson = i;
-                break;
+                if (row["ARFotoName"].ToString().Equals(mTrackableBehaviour.TrackableName))
+                {
+                    indexOfPerson = i;
+                    break;
+                }
+                i++;
             }
-            i++;
-        }
 
-        this.txtName.text = dl.myPeople[indexOfPerson].Name1 + " " + dl.myPeople[indexOfPerson].Surname1;
-        this.txtTitle.text = dl.myPeople[indexOfPerson].Title1;
-        this.txtDepartment.text = dl.myPeople[indexOfPerson].Department1;
-        this.txtPersonalInfo.text = dl.myPeople[indexOfPerson].PersonalInfo1;
-        this.txtSpeciality.text = dl.myPeople[indexOfPerson].Speciality1;
-        this.txtDevTeam.text = dl.myPeople[indexOfPerson].Team1;
-        this.txtCurrentTasks.text = "";
+            this.txtName.text = dl.myPeople[indexOfPerson].Name1 + " " + dl.myPeople[indexOfPerson].Surname1;
+            this.txtTitle.text = dl.myPeople[indexOfPerson].Title1;
+            this.txtDepartment.text = dl.myPeople[indexOfPerson].Department1;
+            this.txtPersonalInfo.text = dl.myPeople[indexOfPerson].PersonalInfo1;
+            this.txtSpeciality.text = dl.myPeople[indexOfPerson].Speciality1;
+            this.txtDevTeam.text = dl.myPeople[indexOfPerson].Team1;
+            this.txtCurrentTasks.text = "";
 
-        int ind = 0;
-        foreach (DataRow row in dl.dtPERSONTASK.Rows)
-        {
-            int persID = int.Parse(row["PersonID"].ToString());
-            if (persID==dl.myPeople[indexOfPerson].PersonID1)
+            int ind = 0;
+            foreach (DataRow row in dl.dtPERSONTASK.Rows)
             {
-                if (ind==0)
+                int persID = int.Parse(row["PersonID"].ToString());
+                if (persID == dl.myPeople[indexOfPerson].PersonID1)
                 {
-                    this.txtCurrentTasks.text = this.txtCurrentTasks.text + row["TaskName"].ToString();
+                    if (ind == 0)
+                    {
+                        this.txtCurrentTasks.text = this.txtCurrentTasks.text + row["TaskName"].ToString();
+                    }
+                    else
+                    {
+                        this.txtCurrentTasks.text = this.txtCurrentTasks.text + "\n" + row["TaskName"].ToString();
+                    }
                 }
-                else
-                {
-                    this.txtCurrentTasks.text = this.txtCurrentTasks.text + "\n" + row["TaskName"].ToString();
-                }
+                ind++;
             }
-            ind++;
-        }
 
-        //StartCoroutine(playVideo());
+            //StartCoroutine(playVideo());
+        }
     }
 
 
