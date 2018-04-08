@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System;
+using System.Linq;
+using System.Text;
+using System.IO;
 
 public class DataLoader : MonoBehaviour
 {
@@ -305,13 +310,65 @@ public class DataLoader : MonoBehaviour
     public DataTable dtPERSON = new DataTable();
     public DataTable dtPERSONTASK = new DataTable();
 
+    private string randomCode = "IFOZTuxX0sUd3/PO8nU9u6Z1zrX0TBMVsr3WKEDjCWL2r7dspa7fBH52oYHAIqItgaHoUCZDRW4rne8yQdmrR8BgdRm5JC4hGsXEenDS2V38UrJF281ZSpfANks0uBv+";
+    string Sqlpassword = "5gVmXKtUCxqzZ/3te7WYvuLHKJLcwtE9e8IzjomgWA5I8VQ5bjGKBRv0h/sRXqnlw2fIfCdWrTrHUn2FZRJA7QOPBOf3wmvZfaS2NkoOnN5OfYiDg5bHcklZaYNJi16E";
+
+    public static class Decryptor
+    {
+        // This constant is used to determine the keysize of the encryption algorithm in bits.
+        // We divide this by 8 within the code below to get the equivalent number of bytes.
+        private const int Keysize = 256;
+
+        // This constant determines the number of iterations for the password bytes generation function.
+        private const int DerivationIterations = 1000;
+
+        public static string Decrypt(string DecryptText, string passCode)
+        {
+            // Get the complete stream of bytes that represent:
+            // [32 bytes of Salt] + [32 bytes of IV] + [n bytes of CipherText]
+            var decryptTextBytesWithSaltAndIv = Convert.FromBase64String(DecryptText);
+            // Get the saltbytes by extracting the first 32 bytes from the supplied cipherText bytes.
+            var saltStringBytes = decryptTextBytesWithSaltAndIv.Take(Keysize / 8).ToArray();
+            // Get the IV bytes by extracting the next 32 bytes from the supplied cipherText bytes.
+            var ivStringBytes = decryptTextBytesWithSaltAndIv.Skip(Keysize / 8).Take(Keysize / 8).ToArray();
+            // Get the actual cipher text bytes by removing the first 64 bytes from the cipherText string.
+            var decryptTextBytes = decryptTextBytesWithSaltAndIv.Skip((Keysize / 8) * 2).Take(decryptTextBytesWithSaltAndIv.Length - ((Keysize / 8) * 2)).ToArray();
+
+            var password = new Rfc2898DeriveBytes(passCode, saltStringBytes, DerivationIterations);
+
+            var keyBytes = password.GetBytes(Keysize / 8);
+            using (var symmetricKey = new RijndaelManaged())
+            {
+                symmetricKey.BlockSize = 256;
+                symmetricKey.Mode = CipherMode.CBC;
+                symmetricKey.Padding = PaddingMode.PKCS7;
+                var decryptor = symmetricKey.CreateDecryptor(keyBytes, ivStringBytes);
+
+
+                var memoryStream = new MemoryStream(decryptTextBytes);
+
+                var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
+
+                var plainTextBytes = new byte[decryptTextBytes.Length];
+                var decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
+                memoryStream.Close();
+                cryptoStream.Close();
+                return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount);
+            }
+
+        }
+    }
+
     public void Start()
     {
+
+        string connectionPassword = Decryptor.Decrypt(Sqlpassword, randomCode);
+
         string connectionString =
              "Server=den1.mssql5.gear.host;" +
              "Database=arprojectsenior;" +
              "User ID=arprojectsenior;" +
-             "Password=201311040_irem;";
+             "Password="+connectionPassword+";";
 
         using (SqlConnection dbCon = new SqlConnection(connectionString))
         {
