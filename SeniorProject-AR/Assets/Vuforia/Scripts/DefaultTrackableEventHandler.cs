@@ -123,57 +123,30 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
             generatedQuery = foundedPerson.generatePersonQuery(mTrackableBehaviour.TrackableName);
             myDT = database.GetData(generatedQuery);
+            displayOrientationData(myDT);
+        }
 
-            foreach (DataRow row in myDT.Rows)
-            {
-                this.txtName.text = row["PersonID"].ToString();
-            }
-
-            counter = 0;
-
-            int indexOfPerson = -1;
-
-            int i = 0;
-            foreach (DataRow row in dl.dtPERSON.Rows)
-            {
-                if (row["ARFotoName"].ToString().Equals(mTrackableBehaviour.TrackableName))
-                {
-                    indexOfPerson = i;
-                    break;
-                }
-                i++;
-            }
-
-            //this.txtName.text = dl.myPeople[indexOfPerson].Name1 + " " + dl.myPeople[indexOfPerson].Surname1;
-            this.txtTitle.text = dl.myPeople[indexOfPerson].Title1;
-            this.txtDepartment.text = dl.myPeople[indexOfPerson].Department1;
-            this.txtPersonalInfo.text = dl.myPeople[indexOfPerson].PersonalInfo1;
-            this.txtSpeciality.text = dl.myPeople[indexOfPerson].Speciality1;
-            this.txtDevTeam.text = dl.myPeople[indexOfPerson].Team1;
-            this.txtCurrentTasks.text = "";
-
-            int ind = 0;
-            foreach (DataRow row in dl.dtPERSONTASK.Rows)
-            {
-                int persID = int.Parse(row["PersonID"].ToString());
-                if (persID == dl.myPeople[indexOfPerson].PersonID1)
-                {
-                    if (ind == 0)
-                    {
-                        this.txtCurrentTasks.text = this.txtCurrentTasks.text + row["TaskName"].ToString();
-                    }
-                    else
-                    {
-                        this.txtCurrentTasks.text = this.txtCurrentTasks.text + "\n" + row["TaskName"].ToString();
-                    }
-                }
-                ind++;
-            }
-
-            //StartCoroutine(playVideo());
+        else if (scene.name == "SystemDashboard")
+        {
+            
         }
     }
 
+    public void displayOrientationData(DataTable person)
+    {
+     
+        foreach (DataRow row in person.Rows)
+        {
+            this.txtName.text = row["Name"].ToString() + " " + row["Surname"].ToString();
+            this.txtTitle.text = row["Title"].ToString();
+            this.txtDepartment.text = row["Department"].ToString();
+            this.txtPersonalInfo.text = row["PersonalInfo"].ToString();
+            this.txtSpeciality.text = row["Speciality"].ToString();
+            this.txtDevTeam.text = row["Team"].ToString();
+            this.txtCurrentTasks.text = "";
+        }
+
+    }
 
     protected virtual void OnTrackingLost()
     {
