@@ -267,7 +267,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: imp3Material
+  m_Name: imp4Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -280,7 +280,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b1da40a4f1dd4cac84e640a7701f568c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8ddbc69fa97944778605c4a7f069e836, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1402,7 +1402,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.16805555}
+      m_Extent: {x: 0.5, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1455,7 +1455,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000c1162cbe00000000ffff7f3f000000000000000000000000000000bf00000000c1162c3e00000000ffff7f3f00000000000000000000803f0000003f00000000c1162cbe00000000ffff7f3f000000000000803f000000000000003f00000000c1162c3e00000000ffff7f3f000000000000803f0000803f
+    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1935,10 +1935,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.7080398
+  mHeight: 3.361111
 --- !u!43 &346247012
 Mesh:
   m_ObjectHideFlags: 0
@@ -2287,10 +2287,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.857143
+  mHeight: 3.361111
 --- !u!1 &394271015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,10 +2415,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.6740952
+  mHeight: 3.361111
 --- !u!1 &400275157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,10 +4840,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.8402371
+  mHeight: 3.361111
 --- !u!1 &772666635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,10 +4968,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.655602
+  mHeight: 3.361111
 --- !u!1 &781126532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,10 +6629,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.9046898
+  mHeight: 3.361111
 --- !u!1 &1133908222
 GameObject:
   m_ObjectHideFlags: 0
@@ -7053,10 +7053,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.655602
+  mHeight: 3.361111
 --- !u!1 &1230709473
 GameObject:
   m_ObjectHideFlags: 0
@@ -7974,10 +7974,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.644628
+  mHeight: 3.361111
 --- !u!1 &1373615126
 GameObject:
   m_ObjectHideFlags: 0
@@ -8901,10 +8901,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.836041
+  mHeight: 3.361111
 --- !u!1 &1592205191
 GameObject:
   m_ObjectHideFlags: 0
@@ -9635,10 +9635,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.004695
+  mHeight: 3.361111
 --- !u!1 &1749565044
 GameObject:
   m_ObjectHideFlags: 0
@@ -10351,7 +10351,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Foto_IremMaterial
+  m_Name: Foto_ErayMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -10364,7 +10364,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 87e509be60524e9792185c4ed1b7f447, type: 3}
+        m_Texture: {fileID: 2800000, guid: abd2e87b846440a991fc307937876b28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -11480,10 +11480,10 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Test.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.3361111
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 2.917933
+  mHeight: 3.361111
 --- !u!1 &2067617923
 GameObject:
   m_ObjectHideFlags: 0
