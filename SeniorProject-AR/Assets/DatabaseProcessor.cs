@@ -94,7 +94,7 @@ public class DatabaseProcessor : MonoBehaviour
         }
     }
 
-    DataTable GetData(string query)
+    public DataTable GetData(string query)
     {
         DataTable myDataTable = new DataTable();
         using (myConnection)

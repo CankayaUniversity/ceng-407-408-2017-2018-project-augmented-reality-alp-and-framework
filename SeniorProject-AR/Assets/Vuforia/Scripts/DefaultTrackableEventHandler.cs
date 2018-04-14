@@ -53,7 +53,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
 
-        //dl.Start();
+        dl.Start();
         database.Connect();
     }
 
@@ -117,6 +117,18 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
         if (scene.name == "OrientationMode")
         {
+            DataTable myDT;
+            string generatedQuery;
+            PERSON foundedPerson = new PERSON();
+
+            generatedQuery = foundedPerson.generatePersonQuery(mTrackableBehaviour.TrackableName);
+            myDT = database.GetData(generatedQuery);
+
+            foreach (DataRow row in myDT.Rows)
+            {
+                this.txtName.text = row["PersonID"].ToString();
+            }
+
             counter = 0;
 
             int indexOfPerson = -1;
@@ -132,7 +144,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
                 i++;
             }
 
-            this.txtName.text = dl.myPeople[indexOfPerson].Name1 + " " + dl.myPeople[indexOfPerson].Surname1;
+            //this.txtName.text = dl.myPeople[indexOfPerson].Name1 + " " + dl.myPeople[indexOfPerson].Surname1;
             this.txtTitle.text = dl.myPeople[indexOfPerson].Title1;
             this.txtDepartment.text = dl.myPeople[indexOfPerson].Department1;
             this.txtPersonalInfo.text = dl.myPeople[indexOfPerson].PersonalInfo1;

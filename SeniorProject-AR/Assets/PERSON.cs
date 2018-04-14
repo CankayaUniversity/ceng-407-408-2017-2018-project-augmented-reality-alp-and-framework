@@ -177,4 +177,11 @@ public class PERSON : MonoBehaviour
             ARFotoName = value;
         }
     }
+
+    public string generatePersonQuery(string uniqueFotoName)
+    {
+        string sqlQuery;
+        sqlQuery = "SELECT *FROM PERSON WHERE ARFotoName=" + "'" + uniqueFotoName + "'";
+        return sqlQuery;
+    }
 }
