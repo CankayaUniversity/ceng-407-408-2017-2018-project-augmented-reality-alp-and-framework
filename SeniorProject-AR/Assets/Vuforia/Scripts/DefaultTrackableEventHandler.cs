@@ -20,6 +20,7 @@ using UnityEngine.SceneManagement;
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
     private DataLoader dl = new DataLoader();
+    private DatabaseProcessor database = new DatabaseProcessor();
 
     public RawImage image;
     public VideoClip videoToPlay;
@@ -52,7 +53,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
 
-        dl.Start();
+        //dl.Start();
+        database.Connect();
     }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
