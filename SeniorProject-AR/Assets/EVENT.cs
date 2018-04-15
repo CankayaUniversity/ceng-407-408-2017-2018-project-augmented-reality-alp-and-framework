@@ -75,10 +75,10 @@ public class EVENT : MonoBehaviour {
         }
     }
 
-    public string generateEventQuery(int uniquePersonID)
+    public string generateEventQuery(int personID)
     {
         string sqlQuery;
-        sqlQuery = "SELECT *FROM EVENT WHERE PersonID=" + "'" + uniquePersonID + "'" + "AND Date=" + "'"+ DateTime.Today;
+        sqlQuery = "SELECT *FROM EVENT WHERE PersonID=" + "'" + personID + "'";
         return sqlQuery;
     }
 }

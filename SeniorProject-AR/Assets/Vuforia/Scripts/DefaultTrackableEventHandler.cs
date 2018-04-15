@@ -9,6 +9,7 @@ Confidential and Proprietary - Protected under copyright and other laws.
 using UnityEngine;
 using Vuforia;
 using System.Data;
+using System;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -34,6 +35,9 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtPersonalInfo;
     public Text txtSpeciality;
     public Text txtDevTeam;
+    public Text txtEvents;
+
+
 
     //systemDashboardTask
     public Text txtTaskCode;
@@ -42,6 +46,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtTaskDefinition;
     public Text txtAssignees;
 
+    private int personIDForOrientationMode = -1;
     private int personIDForOperationMode = -1;
     private int taskIDForMeetingMode = -1;
 
@@ -130,13 +135,37 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
         if (scene.name == "OrientationMode")
         {
-            DataTable myDT;
-            string generatedQuery;
-            PERSON foundedPerson = new PERSON();
+            this.txtEvents.text = "";
 
-            generatedQuery = foundedPerson.generatePersonQuery(mTrackableBehaviour.TrackableName);
-            myDT = database.GetData(generatedQuery);
-            displayOrientationData(myDT);
+            DateTime date = DateTime.Today;
+            string sentence = date.ToShortDateString();
+            String[] breakApart = sentence.Split('/');
+           
+            DataTable personDT;
+            DataTable eventDT;
+
+            string generatedQueryWithEvent;
+            string generatedQueryWithPerson;
+
+            PERSON foundedPerson = new PERSON();
+            EVENT foundedEvent = new EVENT();
+
+            generatedQueryWithPerson = foundedPerson.generatePersonQuery(mTrackableBehaviour.TrackableName);       
+            personDT = database.GetData(generatedQueryWithPerson);
+            displayOrientationData(personDT);
+
+            foreach (DataRow row in personDT.Rows)
+            {
+             
+                this.personIDForOrientationMode = int.Parse(row["PersonID"].ToString());
+                break;
+            }
+            if (this.personIDForOrientationMode != -1)
+            {
+                generatedQueryWithEvent = foundedEvent.generateEventQuery((this.personIDForOrientationMode));
+                eventDT = database.GetData(generatedQueryWithEvent);
+                displayEvents(eventDT, breakApart);
+            }          
         }
 
         else if (scene.name == "SystemDashboard")
@@ -193,7 +222,35 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             this.txtSpeciality.text = row["Speciality"].ToString();
             this.txtDevTeam.text = row["Team"].ToString();
         }
+    }
 
+    public void displayEvents(DataTable eventDT, String[] todaysDate)
+    {
+        string day = todaysDate[0];
+        string month = todaysDate[1];
+        string year = todaysDate[2];
+
+        string sDay, sMonth, sYear;
+
+        foreach (DataRow row in eventDT.Rows)
+        {          
+            string dbDate = row["EventDate"].ToString();
+            string[] dbDateTime = dbDate.Split(' ');
+
+            string dayMonthYear = dbDateTime[0];
+            string time = dbDateTime[1];
+
+            string[] date = dayMonthYear.Split('/');
+
+            sDay = date[0];
+            sMonth = date[1];
+            sYear = date[2];
+
+            if (sYear == year && sMonth == month && sDay == day)
+            {
+                this.txtEvents.text += time + " " + row["Header"].ToString() + " \n";
+            }
+        }
     }
 
     public void displayOperationData(int personID) //AR fotoðrafý okunan kiþinin id'si geliyor

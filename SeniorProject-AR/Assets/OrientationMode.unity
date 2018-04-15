@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 99856255}
   - component: {fileID: 99856254}
   m_Layer: 0
-  m_Name: TxtCurrentTasks
+  m_Name: TxtEvents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,13 +351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'My First Task
-
-    My Second Task
-
-    My Third Task
-
-    My Fourth Task'
+  m_Text: 
 --- !u!222 &99856255
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1059,7 +1053,7 @@ GameObject:
   - component: {fileID: 343336970}
   - component: {fileID: 343336969}
   m_Layer: 0
-  m_Name: TxtCurrentTasksTitle
+  m_Name: TxtEventsTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1115,7 +1109,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Current Tasks
+  m_Text: Todays Events
 --- !u!222 &343336970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1301,7 +1295,14 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 592023168}
   txtSpeciality: {fileID: 1236849045}
   txtDevTeam: {fileID: 388743370}
-  txtCurrentTasks: {fileID: 1516508929}
+  txtEvents: {fileID: 1516508929}
+  txtTaskCode: {fileID: 0}
+  txtStatus: {fileID: 0}
+  txtTaskName: {fileID: 0}
+  txtTaskDefinition: {fileID: 0}
+  txtAssignees: {fileID: 0}
+  txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 501442976}
   counter: 0
 --- !u!114 &384203015
@@ -1404,7 +1405,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Foto_ErayMaterial
+  m_Name: Foto_BoraMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1417,7 +1418,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7d71b73d5e754a95bfaf29b663702db6, type: 3}
+        m_Texture: {fileID: 2800000, guid: e3b6792d6fdb478ab45c7a965fb1be5b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -2074,7 +2075,14 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 578753970}
   txtSpeciality: {fileID: 680791234}
   txtDevTeam: {fileID: 865753964}
-  txtCurrentTasks: {fileID: 1735203652}
+  txtEvents: {fileID: 1735203652}
+  txtTaskCode: {fileID: 0}
+  txtStatus: {fileID: 0}
+  txtTaskName: {fileID: 0}
+  txtTaskDefinition: {fileID: 0}
+  txtAssignees: {fileID: 0}
+  txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 1859534164}
   counter: 0
 --- !u!114 &536201526
@@ -3235,7 +3243,7 @@ GameObject:
   - component: {fileID: 1044158777}
   - component: {fileID: 1044158776}
   m_Layer: 0
-  m_Name: TxtCurrentTasks
+  m_Name: TxtEvents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3273,13 +3281,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'My First Task
-
-    My Second Task
-
-    My Third Task
-
-    My Fourth Task'
+  m_Text: 
 --- !u!222 &1044158777
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4013,7 +4015,14 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 275397737}
   txtSpeciality: {fileID: 1326792902}
   txtDevTeam: {fileID: 605964015}
-  txtCurrentTasks: {fileID: 1044158776}
+  txtEvents: {fileID: 1044158776}
+  txtTaskCode: {fileID: 0}
+  txtStatus: {fileID: 0}
+  txtTaskName: {fileID: 0}
+  txtTaskDefinition: {fileID: 0}
+  txtAssignees: {fileID: 0}
+  txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 529011980}
   counter: 0
 --- !u!33 &1366438474
@@ -4267,7 +4276,7 @@ GameObject:
   - component: {fileID: 1516508930}
   - component: {fileID: 1516508929}
   m_Layer: 0
-  m_Name: TxtCurrentTasks
+  m_Name: TxtEvents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4323,13 +4332,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'My First Task
-
-    My Second Task
-
-    My Third Task
-
-    My Fourth Task'
+  m_Text: 
 --- !u!222 &1516508930
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4347,7 +4350,7 @@ GameObject:
   - component: {fileID: 1568120312}
   - component: {fileID: 1568120311}
   m_Layer: 0
-  m_Name: TxtCurrentTasksTitle
+  m_Name: TxtEventsTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4403,7 +4406,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Current Tasks
+  m_Text: Todays Events
 --- !u!222 &1568120312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4633,7 +4636,7 @@ GameObject:
   - component: {fileID: 1642770224}
   - component: {fileID: 1642770223}
   m_Layer: 0
-  m_Name: TxtCurrentTasksTitle
+  m_Name: TxtEventsTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4689,7 +4692,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Current Tasks
+  m_Text: Todays Events
 --- !u!222 &1642770224
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4923,7 +4926,7 @@ GameObject:
   - component: {fileID: 1735203653}
   - component: {fileID: 1735203652}
   m_Layer: 0
-  m_Name: TxtCurrentTasks
+  m_Name: TxtEvents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4979,13 +4982,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'My First Task
-
-    My Second Task
-
-    My Third Task
-
-    My Fourth Task'
+  m_Text: 
 --- !u!222 &1735203653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5077,7 +5074,7 @@ GameObject:
   - component: {fileID: 1766870537}
   - component: {fileID: 1766870536}
   m_Layer: 0
-  m_Name: TxtCurrentTasksTitle
+  m_Name: TxtEventsTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5133,7 +5130,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Current Tasks
+  m_Text: Todays Events
 --- !u!222 &1766870537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5325,7 +5322,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.33333334, y: 0, z: 0.5}
+      m_Extent: {x: 0.37327778, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5378,7 +5375,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: abaaaabe00000000000000bf000000000000803f000000000000000000000000abaaaabe000000000000003f000000000000803f00000000000000000000803fabaaaa3e00000000000000bf000000000000803f000000000000803f00000000abaaaa3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 441ebfbe00000000000000bf000000000000803f000000000000000000000000441ebfbe000000000000003f000000000000803f00000000000000000000803f441ebf3e00000000000000bf000000000000803f000000000000803f00000000441ebf3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -6017,7 +6014,14 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 510863420}
   txtSpeciality: {fileID: 1715356507}
   txtDevTeam: {fileID: 265037799}
-  txtCurrentTasks: {fileID: 99856254}
+  txtEvents: {fileID: 99856254}
+  txtTaskCode: {fileID: 0}
+  txtStatus: {fileID: 0}
+  txtTaskName: {fileID: 0}
+  txtTaskDefinition: {fileID: 0}
+  txtAssignees: {fileID: 0}
+  txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 1034602369}
   counter: 0
 --- !u!114 &1989688523
