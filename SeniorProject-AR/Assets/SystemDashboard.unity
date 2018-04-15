@@ -1916,7 +1916,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 950795690}
+  txtStatus: {fileID: 128343213}
+  txtTaskName: {fileID: 1917055204}
+  txtTaskDefinition: {fileID: 1923724134}
+  txtAssignees: {fileID: 239096774}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &344320974
@@ -1938,7 +1944,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!43 &346247012
 Mesh:
   m_ObjectHideFlags: 0
@@ -2268,7 +2274,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 2014183519}
+  txtStatus: {fileID: 958123128}
+  txtTaskName: {fileID: 1173700085}
+  txtTaskDefinition: {fileID: 619489049}
+  txtAssignees: {fileID: 127085549}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &351250278
@@ -2290,7 +2302,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &394271015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,7 +2408,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 95442296}
+  txtStatus: {fileID: 295999612}
+  txtTaskName: {fileID: 1935227689}
+  txtTaskDefinition: {fileID: 1262221177}
+  txtAssignees: {fileID: 1323369854}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &394271021
@@ -2418,7 +2436,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &400275157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,7 +4839,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 2134930196}
+  txtStatus: {fileID: 2067617925}
+  txtTaskName: {fileID: 1559178394}
+  txtTaskDefinition: {fileID: 550802877}
+  txtAssignees: {fileID: 1339664995}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &771459678
@@ -4843,7 +4867,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &772666635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4949,7 +4973,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 961690289}
+  txtStatus: {fileID: 976207975}
+  txtTaskName: {fileID: 1248847979}
+  txtTaskDefinition: {fileID: 879158030}
+  txtAssignees: {fileID: 1650730673}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &772666641
@@ -4971,7 +5001,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &781126532
 GameObject:
   m_ObjectHideFlags: 0
@@ -5152,7 +5182,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
-  txtCurrentTasks: {fileID: 0}
+  txtTaskCode: {fileID: 0}
+  txtStatus: {fileID: 0}
+  txtTaskName: {fileID: 0}
+  txtTaskDefinition: {fileID: 0}
+  txtAssignees: {fileID: 0}
+  txtCurrentTasks: {fileID: 2124429888}
+  txtSharedTasks: {fileID: 686558921}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &812930615
@@ -6018,7 +6054,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
-  txtCurrentTasks: {fileID: 0}
+  txtTaskCode: {fileID: 0}
+  txtStatus: {fileID: 0}
+  txtTaskName: {fileID: 0}
+  txtTaskDefinition: {fileID: 0}
+  txtAssignees: {fileID: 0}
+  txtCurrentTasks: {fileID: 436823190}
+  txtSharedTasks: {fileID: 422540959}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &966522983
@@ -6610,7 +6652,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 328457640}
+  txtStatus: {fileID: 1686188603}
+  txtTaskName: {fileID: 1594259042}
+  txtTaskDefinition: {fileID: 1133908224}
+  txtAssignees: {fileID: 1712691202}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &1097080514
@@ -6632,7 +6680,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &1133908222
 GameObject:
   m_ObjectHideFlags: 0
@@ -7034,7 +7082,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 890497640}
+  txtStatus: {fileID: 58739332}
+  txtTaskName: {fileID: 508953839}
+  txtTaskDefinition: {fileID: 2118720899}
+  txtAssignees: {fileID: 278717766}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &1208919320
@@ -7056,7 +7110,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &1230709473
 GameObject:
   m_ObjectHideFlags: 0
@@ -7955,7 +8009,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 1841712708}
+  txtStatus: {fileID: 1328549454}
+  txtTaskName: {fileID: 688075591}
+  txtTaskDefinition: {fileID: 2147202551}
+  txtAssignees: {fileID: 102905129}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &1361818627
@@ -7977,7 +8037,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &1373615126
 GameObject:
   m_ObjectHideFlags: 0
@@ -8163,7 +8223,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
-  txtCurrentTasks: {fileID: 0}
+  txtTaskCode: {fileID: 0}
+  txtStatus: {fileID: 0}
+  txtTaskName: {fileID: 0}
+  txtTaskDefinition: {fileID: 0}
+  txtAssignees: {fileID: 0}
+  txtCurrentTasks: {fileID: 1134661823}
+  txtSharedTasks: {fileID: 1941736603}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &1432659672
@@ -8882,7 +8948,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 1297282029}
+  txtStatus: {fileID: 1613292134}
+  txtTaskName: {fileID: 1510923389}
+  txtTaskDefinition: {fileID: 117791314}
+  txtAssignees: {fileID: 1373615128}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &1568949793
@@ -8904,7 +8976,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &1592205191
 GameObject:
   m_ObjectHideFlags: 0
@@ -9616,7 +9688,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 1749565046}
+  txtStatus: {fileID: 603633912}
+  txtTaskName: {fileID: 1790662081}
+  txtTaskDefinition: {fileID: 1159842568}
+  txtAssignees: {fileID: 476795210}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &1743989870
@@ -9638,7 +9716,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &1749565044
 GameObject:
   m_ObjectHideFlags: 0
@@ -10475,7 +10553,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
-  txtCurrentTasks: {fileID: 0}
+  txtTaskCode: {fileID: 0}
+  txtStatus: {fileID: 0}
+  txtTaskName: {fileID: 0}
+  txtTaskDefinition: {fileID: 0}
+  txtAssignees: {fileID: 0}
+  txtCurrentTasks: {fileID: 1529037445}
+  txtSharedTasks: {fileID: 161858008}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &1838316539
@@ -11461,7 +11545,13 @@ MonoBehaviour:
   txtPersonalInfo: {fileID: 0}
   txtSpeciality: {fileID: 0}
   txtDevTeam: {fileID: 0}
+  txtTaskCode: {fileID: 1836919835}
+  txtStatus: {fileID: 323990303}
+  txtTaskName: {fileID: 1061165574}
+  txtTaskDefinition: {fileID: 1472536878}
+  txtAssignees: {fileID: 1940132431}
   txtCurrentTasks: {fileID: 0}
+  txtSharedTasks: {fileID: 0}
   button: {fileID: 0}
   counter: 0
 --- !u!114 &2060819317
@@ -11483,7 +11573,7 @@ MonoBehaviour:
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 10
-  mHeight: 3.361111
+  mHeight: 10
 --- !u!1 &2067617923
 GameObject:
   m_ObjectHideFlags: 0

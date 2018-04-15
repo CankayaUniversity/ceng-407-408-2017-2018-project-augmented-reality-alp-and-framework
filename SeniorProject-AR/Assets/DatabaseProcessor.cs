@@ -75,9 +75,9 @@ public class DatabaseProcessor : MonoBehaviour
     {
         string connectionPassword = DecryptorObject.getPassword();
         string connectionString =
-                 "Server=den1.mssql5.gear.host;" +
-                 "Database=arprojectsenior;" +
-                 "User ID=arprojectsenior;" +
+                 "Server=den1.mssql3.gear.host;" +
+                 "Database=seniorprojectdb3;" +
+                 "User ID=seniorprojectdb3;" +
                  "Password=" + connectionPassword + ";";
         try
         {
@@ -87,7 +87,7 @@ public class DatabaseProcessor : MonoBehaviour
             return true;
         }
 
-        catch(System.Exception e)
+        catch (System.Exception e)
         {
             Debug.Log(e.Message + " ERRORDBProccessor");
             return false;
@@ -97,17 +97,17 @@ public class DatabaseProcessor : MonoBehaviour
     public DataTable GetData(string query)
     {
         DataTable myDataTable = new DataTable();
-        using (myConnection)
-        {
-            SqlCommand myCommand;
-            myCommand = new SqlCommand(query, myConnection);
-            int commandResult = myCommand.ExecuteNonQuery();
 
-            using (SqlDataReader reader = myCommand.ExecuteReader())
-            {
-                myDataTable.Load(reader);
-            }
+        SqlCommand myCommand;
+        myCommand = new SqlCommand(query, myConnection);
+        Debug.Log(myConnection.State);
+        int commandResult = myCommand.ExecuteNonQuery();
+
+        using (SqlDataReader reader = myCommand.ExecuteReader())
+        {
+            myDataTable.Load(reader);
         }
+
         Debug.Log("DATA TABLE RETURN");
         return myDataTable;
     }

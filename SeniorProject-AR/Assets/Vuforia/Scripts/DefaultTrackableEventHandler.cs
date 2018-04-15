@@ -19,22 +19,35 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
-    private DataLoader dl = new DataLoader();
+    //private DataLoader dl = new DataLoader();
     private DatabaseProcessor database = new DatabaseProcessor();
-
+    //orientationMode
     public RawImage image;
     public VideoClip videoToPlay;
     private VideoPlayer videoPlayer;
     private VideoSource videoSource;
     private AudioSource audioSource;
-
+    //orientationMode
     public Text txtName;
     public Text txtTitle;
     public Text txtDepartment;
     public Text txtPersonalInfo;
     public Text txtSpeciality;
     public Text txtDevTeam;
+
+    //systemDashboardTask
+    public Text txtTaskCode;
+    public Text txtStatus;
+    public Text txtTaskName;
+    public Text txtTaskDefinition;
+    public Text txtAssignees;
+
+    private int personIDForOperationMode = -1;
+    private int taskIDForMeetingMode = -1;
+
+    //operation
     public Text txtCurrentTasks;
+    public Text txtSharedTasks;
 
     public Toggle button;
     public int counter = 0;
@@ -53,7 +66,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
 
-        dl.Start();
+        //dl.Start();
         database.Connect();
     }
 
@@ -128,7 +141,43 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
         else if (scene.name == "SystemDashboard")
         {
-            
+            DataTable mySysDashDT;
+            string generatedQueryWithPerson;
+            string generatedQueryWithTask;
+
+            TASK foundedTask = new TASK();
+            PERSON foundedPerson = new PERSON();
+
+            generatedQueryWithPerson = foundedPerson.generatePersonQuery(mTrackableBehaviour.TrackableName);
+            generatedQueryWithTask = foundedTask.generateTaskQuery(mTrackableBehaviour.TrackableName);
+
+            mySysDashDT = database.GetData(generatedQueryWithPerson);
+            if (mySysDashDT.Rows.Count>0)
+            {
+                foreach(DataRow row in mySysDashDT.Rows)
+                {
+                    this.personIDForOperationMode = int.Parse(row["PersonID"].ToString());
+                    break;
+                }
+                if(this.personIDForOperationMode!=-1)
+                {
+                    displayOperationData(this.personIDForOperationMode);
+                }
+                
+            }
+            else
+            {
+                mySysDashDT = database.GetData(generatedQueryWithTask);
+                foreach (DataRow row in mySysDashDT.Rows)
+                {
+                    this.taskIDForMeetingMode = int.Parse(row["TaskID"].ToString());
+                    break;
+                }
+                if (this.taskIDForMeetingMode != -1)
+                {
+                    displayTaskData(mTrackableBehaviour.TrackableName);
+                }
+            }           
         }
     }
 
@@ -143,9 +192,59 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             this.txtPersonalInfo.text = row["PersonalInfo"].ToString();
             this.txtSpeciality.text = row["Speciality"].ToString();
             this.txtDevTeam.text = row["Team"].ToString();
-            this.txtCurrentTasks.text = "";
         }
 
+    }
+
+    public void displayOperationData(int personID) //AR fotoðrafý okunan kiþinin id'si geliyor
+    {
+        int denemeA=1;
+        PERSONTASK myPersonTask = new PERSONTASK();
+        DataTable currentTasksDT;
+        DataTable sharedTasksDT;
+
+        currentTasksDT = database.GetData(myPersonTask.generatePersonTaskQueryAccordingToPerson(personID));
+        this.txtCurrentTasks.text = "";
+        foreach (DataRow row in currentTasksDT.Rows)
+        {
+            this.txtCurrentTasks.text += "\n";
+            this.txtCurrentTasks.text += row["TaskName"].ToString();
+        }
+
+        sharedTasksDT = database.GetData(myPersonTask.generatePersonTaskQueryAccordingToTaskSharing(denemeA, personID));
+        this.txtSharedTasks.text = "";
+        foreach (DataRow row in sharedTasksDT.Rows)
+        {
+            this.txtSharedTasks.text += "\n";
+            this.txtSharedTasks.text += row["TaskName"].ToString();
+        }
+    }
+
+    public void displayTaskData(string uniquePhotoName) //AR fotoðrafý okunan taskýn id'si geliyor
+    {
+        TASK foundTask = new TASK();
+        PERSONTASK personTaskForAssignees = new PERSONTASK();
+        DataTable taskInfoDT;
+        DataTable taskAssigneesDT;
+
+        taskInfoDT = database.GetData(foundTask.generateTaskQuery(uniquePhotoName));
+        foreach (DataRow row in taskInfoDT.Rows)
+        {
+            this.txtTaskCode.text = row["TaskCode"].ToString();
+            this.txtTaskName.text = row["TaskName"].ToString();
+            this.txtStatus.text = row["TaskProgress"].ToString();
+            this.txtTaskDefinition.text = row["TaskDetail"].ToString();
+        }
+
+        taskAssigneesDT = database.GetData(personTaskForAssignees.generatePersonTaskQueryAccordingToTask(this.taskIDForMeetingMode));
+        this.txtAssignees.text = "";
+        foreach (DataRow row in taskAssigneesDT.Rows)
+        {
+            this.txtAssignees.text += "\n";
+            this.txtAssignees.text += row["Name"].ToString();
+            this.txtAssignees.text += " ";
+            this.txtAssignees.text += row["Surname"].ToString();
+        }
     }
 
     protected virtual void OnTrackingLost()
