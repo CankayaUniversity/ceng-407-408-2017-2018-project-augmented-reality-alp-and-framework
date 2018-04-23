@@ -90,7 +90,14 @@ public class PERSONTASK : MonoBehaviour
 
     public string generatePersonTaskQueryAccordingToPerson(int personID) //for listing current tasks in operation mode 
     {
-        string query = "SELECT TaskName FROM TASK WHERE TaskID in (SELECT TaskID FROM PERSONTASK WHERE PersonID=" + "'" + personID + "')";
+        string query = "SELECT TaskType, TaskName FROM TASK WHERE TaskID in (SELECT TaskID FROM PERSONTASK WHERE PersonID=" + "'" + personID + "')";
+
+        return query;
+    }
+
+    public string generatePersonTaskQueryAccordingToPersonForWorkload(int personID) //for listing current tasks in operation mode 
+    {
+        string query = "SELECT Workload FROM PERSONTASK WHERE PersonID=" + "'" + personID + "'";
 
         return query;
     }

@@ -37,8 +37,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtDevTeam;
     public Text txtEvents;
 
-
-
     //systemDashboardTask
     public Text txtTaskCode;
     public Text txtStatus;
@@ -52,6 +50,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     //operation
     public Text txtCurrentTasks;
+    public Text txtNumOfFeats;
+    public Text txtNumOfBugs;
+    public Text txtNumOfImps;
+    public Text txtTotalWorkload;
     public Text txtSharedTasks;
 
     public Toggle button;
@@ -255,25 +257,57 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     public void displayOperationData(int personID) //AR fotoðrafý okunan kiþinin id'si geliyor
     {
-        int denemeA=1;
+        int denemeA=1; //***login olan kiþinin id'si gelecek***
         PERSONTASK myPersonTask = new PERSONTASK();
         DataTable currentTasksDT;
+        DataTable currentTasksDT2Workload;
         DataTable sharedTasksDT;
+        int numOfFeats;
+        int numOfBugs;
+        int numOfImp;
+        int totalWorkload;
 
         currentTasksDT = database.GetData(myPersonTask.generatePersonTaskQueryAccordingToPerson(personID));
         this.txtCurrentTasks.text = "";
+        numOfFeats = 0;
+        numOfBugs = 0;
+        numOfImp = 0;
         foreach (DataRow row in currentTasksDT.Rows)
         {
-            this.txtCurrentTasks.text += "\n";
+            if (row["TaskType"].ToString().Equals("1"))
+            {
+                numOfFeats++;
+            }
+            else if(row["TaskType"].ToString().Equals("2"))
+            {
+                numOfBugs++;
+            }
+            else if (row["TaskType"].ToString().Equals("3"))
+            {
+                numOfImp++;
+            }
             this.txtCurrentTasks.text += row["TaskName"].ToString();
+            this.txtCurrentTasks.text += "\n";
         }
+
+        currentTasksDT2Workload = database.GetData(myPersonTask.generatePersonTaskQueryAccordingToPersonForWorkload(personID));
+        totalWorkload = 0;
+        foreach (DataRow row in currentTasksDT2Workload.Rows)
+        {
+            totalWorkload += int.Parse(row["Workload"].ToString());
+        }
+
+        this.txtNumOfFeats.text = numOfFeats.ToString();
+        this.txtNumOfBugs.text = numOfBugs.ToString();
+        this.txtNumOfImps.text = numOfImp.ToString();
+        this.txtTotalWorkload.text = totalWorkload.ToString() + " hours";
 
         sharedTasksDT = database.GetData(myPersonTask.generatePersonTaskQueryAccordingToTaskSharing(denemeA, personID));
         this.txtSharedTasks.text = "";
         foreach (DataRow row in sharedTasksDT.Rows)
         {
-            this.txtSharedTasks.text += "\n";
             this.txtSharedTasks.text += row["TaskName"].ToString();
+            this.txtSharedTasks.text += "\n";
         }
     }
 
