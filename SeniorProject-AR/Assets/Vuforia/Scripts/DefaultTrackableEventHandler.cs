@@ -37,6 +37,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtSpeciality;
     public Text txtDevTeam;
     public Text txtEvents;
+    public Toggle button;
+    public int counter = 0;
 
     //systemDashboardTask
     public Text txtTaskCode;
@@ -48,6 +50,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtEndDate;
     public Text txtWarning;
     public Text txtAssignees;
+    private string TFSLink = "";
+    public Toggle TFSButton;
 
     private int personIDForOrientationMode = -1;
     private int personIDForOperationMode = -1;
@@ -60,9 +64,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtNumOfImps;
     public Text txtTotalWorkload;
     public Text txtSharedTasks;
-
-    public Toggle button;
-    public int counter = 0;
 
     #region PRIVATE_MEMBER_VARIABLES
 
@@ -211,6 +212,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
                 }
                 if (this.taskIDForMeetingMode != -1)
                 {
+                    TFSButton.isOn = true;
                     displayTaskData(mTrackableBehaviour.TrackableName);
                 }
             }           
@@ -319,22 +321,48 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     public void displayTaskData(string uniquePhotoName) //AR fotoðrafý okunan taskýn id'si geliyor
     {
+        DateTime today = DateTime.Today;
+        string sentence = today.ToShortDateString();
+        string sentence2;
+        String[] breakApart = sentence.Split('/');
+        String[] dateFromDB;
+        int dbDay, dbMonth, dbYear;
+        int tDay, tMonth, tYear;
+        int dayCalcDB = 0, dayCalcToday = 0;
+
         TASK foundTask = new TASK();
         PERSONTASK personTaskForAssignees = new PERSONTASK();
         DataTable taskInfoDT;
         DataTable taskAssigneesDT;
 
         taskInfoDT = database.GetData(foundTask.generateTaskQuery(uniquePhotoName));
+        this.txtWarning.text = "";
         foreach (DataRow row in taskInfoDT.Rows)
         {
             this.txtTaskCode.text = row["TaskCode"].ToString();
             this.txtTaskName.text = row["TaskName"].ToString();
             this.txtStatus.text = row["TaskProgress"].ToString();
             this.txtTaskDefinition.text = row["TaskDetail"].ToString();
-            this.txtPlannedStartDate.text = row["PlannedStartDate"].ToString(); //düzenleme yapýlacak
-            this.txtStartDate.text = row["StartDate"].ToString(); //düzenleme yapýlacak
-            this.txtEndDate.text = row["EndDate"].ToString(); //düzenleme yapýlacak
-            //this.txtWarning.text = ""; //düzenleme yapýlacak
+            this.txtPlannedStartDate.text = row["PlannedStartDate"].ToString();
+            this.txtStartDate.text = row["StartDate"].ToString();
+            this.txtEndDate.text = row["EndDate"].ToString();
+            this.TFSLink = row["TFSLink"].ToString();
+
+            sentence2 = row["PlannedStartDate"].ToString();
+            dateFromDB = sentence2.Split('-');
+            dbDay = int.Parse(dateFromDB[2]); dbMonth = int.Parse(dateFromDB[1]); dbYear = int.Parse(dateFromDB[0]);
+            dayCalcDB = dbDay + dbMonth * 30;
+            tDay = int.Parse(breakApart[2]); tMonth = int.Parse(breakApart[1]); tYear = int.Parse(breakApart[0]);
+            //tDay = int.Parse("01"); tMonth = int.Parse("12"); tYear = int.Parse("2018"); //deneme
+            dayCalcToday = tDay + tMonth * 30;
+            if (this.txtStatus.text.Equals("To Do") && dayCalcToday>dayCalcDB)
+            {
+                this.txtWarning.text = "Planned start date is passed!";
+            }
+            else
+            {
+                this.txtWarning.text = "";
+            }
         }
 
         taskAssigneesDT = database.GetData(personTaskForAssignees.generatePersonTaskQueryAccordingToTask(this.taskIDForMeetingMode));
@@ -346,6 +374,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             this.txtAssignees.text += row["Surname"].ToString();
             this.txtAssignees.text += "\n";
         }
+        //openTFS();
     }
 
     protected virtual void OnTrackingLost()
@@ -367,6 +396,12 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             component.enabled = false;
         if (videoPlayer != null && videoPlayer.isPlaying)
             stopVideo();
+    }
+
+    public void openTFS()
+    {
+        Application.OpenURL(this.TFSLink);
+        TFSButton.isOn = true;
     }
 
     IEnumerator playVideo()
