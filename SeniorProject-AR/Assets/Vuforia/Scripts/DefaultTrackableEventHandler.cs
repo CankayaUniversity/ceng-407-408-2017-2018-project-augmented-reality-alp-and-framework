@@ -33,6 +33,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtTitle;
     public Text txtDepartment;
     public Text txtPersonalInfo;
+    public Text txtContact;
     public Text txtSpeciality;
     public Text txtDevTeam;
     public Text txtEvents;
@@ -42,6 +43,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     public Text txtStatus;
     public Text txtTaskName;
     public Text txtTaskDefinition;
+    public Text txtPlannedStartDate;
+    public Text txtStartDate;
+    public Text txtEndDate;
+    public Text txtWarning;
     public Text txtAssignees;
 
     private int personIDForOrientationMode = -1;
@@ -221,6 +226,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             this.txtTitle.text = row["Title"].ToString();
             this.txtDepartment.text = row["Department"].ToString();
             this.txtPersonalInfo.text = row["PersonalInfo"].ToString();
+            this.txtContact.text = row["OutlookMail"].ToString();
             this.txtSpeciality.text = row["Speciality"].ToString();
             this.txtDevTeam.text = row["Team"].ToString();
         }
@@ -325,16 +331,20 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             this.txtTaskName.text = row["TaskName"].ToString();
             this.txtStatus.text = row["TaskProgress"].ToString();
             this.txtTaskDefinition.text = row["TaskDetail"].ToString();
+            this.txtPlannedStartDate.text = row["PlannedStartDate"].ToString(); //düzenleme yapýlacak
+            this.txtStartDate.text = row["StartDate"].ToString(); //düzenleme yapýlacak
+            this.txtEndDate.text = row["EndDate"].ToString(); //düzenleme yapýlacak
+            //this.txtWarning.text = ""; //düzenleme yapýlacak
         }
 
         taskAssigneesDT = database.GetData(personTaskForAssignees.generatePersonTaskQueryAccordingToTask(this.taskIDForMeetingMode));
         this.txtAssignees.text = "";
         foreach (DataRow row in taskAssigneesDT.Rows)
         {
-            this.txtAssignees.text += "\n";
             this.txtAssignees.text += row["Name"].ToString();
             this.txtAssignees.text += " ";
             this.txtAssignees.text += row["Surname"].ToString();
+            this.txtAssignees.text += "\n";
         }
     }
 
