@@ -184,4 +184,11 @@ public class PERSON : MonoBehaviour
         sqlQuery = "SELECT *FROM PERSON WHERE ARFotoName=" + "'" + uniqueFotoName + "'";
         return sqlQuery;
     }
+
+    public string generatePersonQuery(string username, string password)
+    {
+        string sqlQuery;
+        sqlQuery = "SELECT *FROM PERSON WHERE OutlookMail=" + "'" + username + "' AND Password= '" + password + "'";
+        return sqlQuery;
+    }
 }
