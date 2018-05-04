@@ -16,9 +16,19 @@ public class Login : MonoBehaviour
 
     protected PERSON user = new PERSON();
 
-    private string myEmail;
-    private string myPassword;
-    
+    private static string myEmail;
+    private static string myPassword;
+
+    public static string getMail()
+    {
+        return myEmail;
+    }
+
+    public static string getPassword()
+    {
+        return myPassword;
+    }
+
     // Use this for initialization
     void Start()
     {

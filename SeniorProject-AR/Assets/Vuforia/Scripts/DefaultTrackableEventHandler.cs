@@ -56,6 +56,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     private int personIDForOrientationMode = -1;
     private int personIDForOperationMode = -1;
     private int taskIDForMeetingMode = -1;
+    private int loginId;
 
     //operation
     public Text txtCurrentTasks;
@@ -249,7 +250,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
             string dayMonthYear = dbDateTime[0];
             string time = dbDateTime[1];
-
+            time = time.Remove(time.Length - 3);
             string[] date = dayMonthYear.Split('/');
 
             sDay = date[0];
@@ -265,7 +266,16 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     public void displayOperationData(int personID) //AR fotoðrafý okunan kiþinin id'si geliyor
     {
-        int denemeA=1; //***login olan kiþinin id'si gelecek***
+        string loginEmail = Login.getMail();
+        string loginPassword= Login.getPassword();
+        PERSON myPerson = new PERSON();
+        DataTable personInfo;
+        personInfo = database.GetData(myPerson.generatePersonQuery(loginEmail, loginPassword));
+        foreach (DataRow row in personInfo.Rows)
+        {
+            this.loginId = Int32.Parse(row["PersonID"].ToString());          
+        }
+
         PERSONTASK myPersonTask = new PERSONTASK();
         DataTable currentTasksDT;
         DataTable currentTasksDT2Workload;
@@ -310,7 +320,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         this.txtNumOfImps.text = numOfImp.ToString();
         this.txtTotalWorkload.text = totalWorkload.ToString() + " hours";
 
-        sharedTasksDT = database.GetData(myPersonTask.generatePersonTaskQueryAccordingToTaskSharing(denemeA, personID));
+        sharedTasksDT = database.GetData(myPersonTask.generatePersonTaskQueryAccordingToTaskSharing(loginId, personID));
         this.txtSharedTasks.text = "";
         foreach (DataRow row in sharedTasksDT.Rows)
         {

@@ -76,8 +76,8 @@ public class DatabaseProcessor : MonoBehaviour
         string connectionPassword = DecryptorObject.getPassword();
         string connectionString =
                  "Server=den1.mssql1.gear.host;" +
-                 "Database=seniorprojectdb5;" +
-                 "User ID=seniorprojectdb5;" +
+                 "Database=seniorprojectdb7;" +
+                 "User ID=seniorprojectdb7;" +
                  "Password=" + connectionPassword + ";";
         try
         {
