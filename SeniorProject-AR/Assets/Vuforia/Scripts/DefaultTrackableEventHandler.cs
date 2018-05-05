@@ -20,7 +20,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
-    //private DataLoader dl = new DataLoader();
     private DatabaseProcessor database = new DatabaseProcessor();
     //orientationMode
     public RawImage image;
@@ -79,8 +78,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
-
-        //dl.Start();
+        
         database.Connect();
     }
 
@@ -264,7 +262,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         }
     }
 
-    public void displayOperationData(int personID) //AR fotoðrafý okunan kiþinin id'si geliyor
+    public void displayOperationData(int personID)
     {
         string loginEmail = Login.getMail();
         string loginPassword= Login.getPassword();
@@ -329,7 +327,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         }
     }
 
-    public void displayTaskData(string uniquePhotoName) //AR fotoðrafý okunan taskýn id'si geliyor
+    public void displayTaskData(string uniquePhotoName)
     {
         DateTime today = DateTime.Today;
         string sentence = today.ToShortDateString();
@@ -363,7 +361,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             dbDay = int.Parse(dateFromDB[2]); dbMonth = int.Parse(dateFromDB[1]); dbYear = int.Parse(dateFromDB[0]);
             dayCalcDB = dbDay + dbMonth * 30;
             tDay = int.Parse(breakApart[2]); tMonth = int.Parse(breakApart[1]); tYear = int.Parse(breakApart[0]);
-            //tDay = int.Parse("01"); tMonth = int.Parse("12"); tYear = int.Parse("2018"); //deneme
             dayCalcToday = tDay + tMonth * 30;
             if (this.txtStatus.text.Equals("To Do") && dayCalcToday>dayCalcDB)
             {
@@ -384,7 +381,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             this.txtAssignees.text += row["Surname"].ToString();
             this.txtAssignees.text += "\n";
         }
-        //openTFS();
     }
 
     protected virtual void OnTrackingLost()

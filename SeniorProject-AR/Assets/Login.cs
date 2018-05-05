@@ -28,19 +28,13 @@ public class Login : MonoBehaviour
     {
         return myPassword;
     }
-
-    // Use this for initialization
     void Start()
     {
 
     }
-
-    // Update is called once per frame
     void Update()
     {
-
-        //btnLogin = login.GetComponent<Button>();
-        //btnLogin.onClick.AddListener(validateLogin);
+        
     }
 
     private bool validateLogin()

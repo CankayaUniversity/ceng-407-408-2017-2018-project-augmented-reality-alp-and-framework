@@ -83,7 +83,6 @@ public class DatabaseProcessor : MonoBehaviour
         {
             myConnection = new SqlConnection(connectionString);
             myConnection.Open();
-            Debug.Log("Successful Connection DatabaseProcessor!");
             return true;
         }
 
@@ -107,8 +106,6 @@ public class DatabaseProcessor : MonoBehaviour
         {
             myDataTable.Load(reader);
         }
-
-        Debug.Log("DATA TABLE RETURN");
         return myDataTable;
     }
 
