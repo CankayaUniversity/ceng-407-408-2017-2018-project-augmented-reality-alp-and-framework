@@ -531,6 +531,75 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 16039023}
+--- !u!1 &31639096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 31639097}
+  - component: {fileID: 31639099}
+  - component: {fileID: 31639098}
+  m_Layer: 0
+  m_Name: PauseImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &31639097
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31639096}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_Children:
+  - {fileID: 872519220}
+  m_Father: {fileID: 217779588}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 358, y: 599}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &31639098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31639096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 307a2acc24488554bb020d508aaa0ad6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &31639099
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31639096}
 --- !u!1 &35757728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1459,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8ddbc69fa97944778605c4a7f069e836, type: 3}
+        m_Texture: {fileID: 2800000, guid: 32565fe2747f4352878c02363515b1de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -2093,6 +2162,100 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215693307}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!1 &217779587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 217779588}
+  - component: {fileID: 217779591}
+  - component: {fileID: 217779590}
+  - component: {fileID: 217779589}
+  m_Layer: 0
+  m_Name: PauseCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &217779588
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217779587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 31639097}
+  m_Father: {fileID: 614397586}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &217779589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217779587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &217779590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217779587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &217779591
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217779587}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
@@ -3148,7 +3311,7 @@ Transform:
   m_Children:
   - {fileID: 569616474}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &344320970
 MeshFilter:
@@ -3255,7 +3418,7 @@ MonoBehaviour:
   mTrackableName: bug3
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -3278,7 +3441,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.37516692, y: 0, z: 0.5}
+      m_Extent: {x: 0.33333334, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -3331,7 +3494,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: e115c0be00000000000000bf000000000000803f000000000000000000000000e115c0be000000000000003f000000000000803f00000000000000000000803fe115c03e00000000000000bf000000000000803f000000000000803f00000000e115c03e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: abaaaabe00000000000000bf000000000000803f000000000000000000000000abaaaabe000000000000003f000000000000803f00000000000000000000803fabaaaa3e00000000000000bf000000000000803f000000000000803f00000000abaaaa3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -3517,7 +3680,7 @@ Transform:
   m_Children:
   - {fileID: 1936764165}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &351250274
 MeshFilter:
@@ -3624,7 +3787,7 @@ MonoBehaviour:
   mTrackableName: imp2
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -4112,7 +4275,7 @@ Transform:
   m_Children:
   - {fileID: 584200784}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &394271017
 MeshFilter:
@@ -4219,7 +4382,7 @@ MonoBehaviour:
   mTrackableName: feat9
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -6585,6 +6748,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 217779588}
   - {fileID: 1097080509}
   - {fileID: 2060819312}
   - {fileID: 344320969}
@@ -7800,7 +7964,7 @@ Transform:
   m_Children:
   - {fileID: 1007891482}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &771459674
 MeshFilter:
@@ -7907,7 +8071,7 @@ MonoBehaviour:
   mTrackableName: imp4
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -7945,7 +8109,7 @@ Transform:
   m_Children:
   - {fileID: 1785019595}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &772666637
 MeshFilter:
@@ -8052,7 +8216,7 @@ MonoBehaviour:
   mTrackableName: feat5
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -8534,7 +8698,7 @@ Transform:
   m_Children:
   - {fileID: 1341842491}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &812930611
 MeshFilter:
@@ -8641,7 +8805,7 @@ MonoBehaviour:
   mTrackableName: Foto_Bora
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1.339485
   mImageTargetType: 0
@@ -9396,6 +9560,127 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869386494}
+--- !u!1 &872519219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 872519220}
+  - component: {fileID: 872519223}
+  - component: {fileID: 872519222}
+  - component: {fileID: 872519221}
+  m_Layer: 0
+  m_Name: PauseButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &872519220
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872519219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6644322, y: 3.683538, z: 1}
+  m_Children: []
+  m_Father: {fileID: 31639097}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &872519221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872519219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 872519222}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1903760449}
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &872519222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872519219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &872519223
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872519219}
 --- !u!1 &876115142
 GameObject:
   m_ObjectHideFlags: 0
@@ -10168,7 +10453,7 @@ Transform:
   m_Children:
   - {fileID: 1751583806}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &966522979
 MeshFilter:
@@ -10275,7 +10560,7 @@ MonoBehaviour:
   mTrackableName: Foto_Eray
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1.5
   mImageTargetType: 0
@@ -11951,7 +12236,7 @@ Transform:
   m_Children:
   - {fileID: 215693308}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1097080510
 MeshFilter:
@@ -12058,7 +12343,7 @@ MonoBehaviour:
   mTrackableName: bug1
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -13576,7 +13861,7 @@ Transform:
   m_Children:
   - {fileID: 1230709474}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1208919316
 MeshFilter:
@@ -13683,7 +13968,7 @@ MonoBehaviour:
   mTrackableName: feat8
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -14804,7 +15089,7 @@ Transform:
   m_Children:
   - {fileID: 514231308}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1361818623
 MeshFilter:
@@ -14911,7 +15196,7 @@ MonoBehaviour:
   mTrackableName: feat4
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -15362,7 +15647,7 @@ Transform:
   m_Children:
   - {fileID: 437254487}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1432659668
 MeshFilter:
@@ -15469,7 +15754,7 @@ MonoBehaviour:
   mTrackableName: Foto_Irem
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1.3389801
   mImageTargetType: 0
@@ -16875,7 +17160,7 @@ Transform:
   m_Children:
   - {fileID: 2048434431}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1568949789
 MeshFilter:
@@ -16982,7 +17267,7 @@ MonoBehaviour:
   mTrackableName: imp3
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -18545,7 +18830,7 @@ Transform:
   m_Children:
   - {fileID: 288885682}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1743989866
 MeshFilter:
@@ -18652,7 +18937,7 @@ MonoBehaviour:
   mTrackableName: imp1
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
@@ -19685,7 +19970,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: abd2e87b846440a991fc307937876b28, type: 3}
+        m_Texture: {fileID: 2800000, guid: 215e5463d7394500954fe333a6ea71ee, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -19723,7 +20008,7 @@ Transform:
   m_Children:
   - {fileID: 744756129}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1838316535
 MeshFilter:
@@ -19830,7 +20115,7 @@ MonoBehaviour:
   mTrackableName: Foto_Ipek
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1.3327401
   mImageTargetType: 0
@@ -22115,7 +22400,7 @@ Transform:
   m_Children:
   - {fileID: 351016373}
   m_Father: {fileID: 614397586}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2060819313
 MeshFilter:
@@ -22222,7 +22507,7 @@ MonoBehaviour:
   mTrackableName: bug2
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Test.xml
+  mDataSetPath: Vuforia/SeniorProjectAR.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0

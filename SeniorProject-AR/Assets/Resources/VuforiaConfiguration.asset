@@ -44,11 +44,9 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - Test_OT
-    - Test
+    - SeniorProjectAR
     dataSetsToActivate:
-    - Test
-    - Test_OT
+    - SeniorProjectAR
   videoBackground:
     clippingMode: 0
     numDivisions: 2
