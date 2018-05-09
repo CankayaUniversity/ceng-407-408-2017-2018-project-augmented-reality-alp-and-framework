@@ -1934,7 +1934,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Foto_IpekMaterial
+  m_Name: Foto_IremMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1947,7 +1947,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f327f05f9e9d478e91f7af7f46d8580d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 71c4a882bb3c4911bcb6c30e66b1e2c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -2718,7 +2718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1626130623}
-  videoToPlay: {fileID: 0}
+  videoToPlay: {fileID: 32900000, guid: 80d7b77c8a5583044afd60c86824288b, type: 3}
   txtName: {fileID: 186322368}
   txtTitle: {fileID: 1368604843}
   txtDepartment: {fileID: 1749563407}
@@ -7611,7 +7611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 65410260}
-  videoToPlay: {fileID: 32900000, guid: 21b493c45088d694d9dcdb6703553248, type: 3}
+  videoToPlay: {fileID: 32900000, guid: 5c464d53e1e7d8e45a4f36163c74291e, type: 3}
   txtName: {fileID: 1254847601}
   txtTitle: {fileID: 1700166617}
   txtDepartment: {fileID: 1898954739}
