@@ -1807,7 +1807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1297374075}
-  videoToPlay: {fileID: 0}
+  videoToPlay: {fileID: 32900000, guid: a4e94077be7db7e4d924c790fe9e3c0e, type: 3}
   txtName: {fileID: 2080433185}
   txtTitle: {fileID: 332771943}
   txtDepartment: {fileID: 277399715}
