@@ -56,6 +56,6 @@ Figure 2: Build Settings
 ## Installation
 
 * From the guide above, created .apk file can be transferred to an Android device by simply dragging and copying the file. 
-* Also, from the link below, .apk file can be downloaded. After the file is downloaded, it can be copied to the Android device and it is ready to run on the device.
+* Also, from the link below, ARBCOF.apk file can be downloaded. After the file is downloaded, it can be extracted from. zip file and copied to the Android device and it is ready to run on the device.
 
-https://github.com/CankayaUniversity/ceng-407-408-project-augmented-reality-alp-and-framework
+https://drive.google.com/file/d/1TaGdJLUQHOwAT9EM8INsJBR7kiL5LVHY/view?usp=sharing
