@@ -15,6 +15,13 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("SystemDashboard");
     }
 
+    public void Logout()
+    {
+        Login.setMail(null);
+        Login.setPassword(null);
+        SceneManager.LoadScene("Login");
+    }
+
     public void Quit()
     {
         Debug.Log("QUIT !");

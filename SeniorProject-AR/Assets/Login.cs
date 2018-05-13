@@ -24,10 +24,21 @@ public class Login : MonoBehaviour
         return myEmail;
     }
 
+    public static void setMail(string email)
+    {
+        myEmail = email;
+    }
+
     public static string getPassword()
     {
         return myPassword;
     }
+
+    public static void setPassword(string pass)
+    {
+        myPassword = pass;
+    }
+
     void Start()
     {
 
