@@ -16,11 +16,11 @@ Augmented Reality Based Continuous Onboarding Framework project is developed usi
 ### Prerequisites / Tools
 	
 * Unity 2017.3.1f1 should be installed on the computer to run and compile the project. Other versions of Unity can cause some problems, since the project is developed with the features of 2017.3.1f1. 
-* This version of Unity is integrated with Vuforia, so while installing that Unity version Vuforia Augmented Reality Support should be chosen on the Components section.
-* Android Studio should be installed to create .apk file from Unity, since the project will run on Android devices, .
+* This version of Unity is integrated with Vuforia, so while installing that Unity version, Vuforia Augmented Reality Support should be chosen on the Components section.
+* Android Studio should be installed to create .apk file from Unity, since the project will run on Android devices.
 
 
-* Final version of the project is available at the link: https://github.com/CankayaUniversity/ceng-407-408-project-augmented-reality-alp-and-framework/releases/tag/v1.0.0 It can be downloaded as a .zip file. Extract the files from .zip folder.
+* Final version of the project is available at the link: https://github.com/CankayaUniversity/ceng-407-408-project-augmented-reality-alp-and-framework/releases/tag/v1.0.1 It can be downloaded as a .zip file. Extract the files from .zip folder.
 
 
 ### Opening the Project in Unity
