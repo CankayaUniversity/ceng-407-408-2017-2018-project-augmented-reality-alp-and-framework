@@ -177,7 +177,7 @@ Figure 6: Pause Menu
 | ------------- | ------------- | ------------- |
 | Resume  | Button | User can click this button to turn back the last running application mode. |
 | Main Menu  | Button | User can click this button to open the Main Menu. |
-| Main Menu  | Button | User can click this button to exit from application. |
+| Quit  | Button | User can click this button to exit from application. |
 
 Table 5: Operation Mode User Interactions
 
