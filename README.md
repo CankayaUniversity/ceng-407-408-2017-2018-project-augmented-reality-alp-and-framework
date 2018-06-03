@@ -20,7 +20,7 @@ Augmented Reality Based Continuous Onboarding Framework project is developed usi
 * Android Studio should be installed to create .apk file from Unity, since the project will run on Android devices.
 
 
-* Final version of the project is available at the link: https://github.com/CankayaUniversity/ceng-407-408-project-augmented-reality-alp-and-framework/releases/tag/v1.0.1 It can be downloaded as a .zip file. Extract the files from .zip folder.
+* Final version of the project is available at the link: https://github.com/CankayaUniversity/ceng-407-408-project-augmented-reality-alp-and-framework/releases/tag/v1.0.2 It can be downloaded as a .zip file. Extract the files from .zip folder.
 
 
 ### Opening the Project in Unity
@@ -58,7 +58,7 @@ Figure 2: Build Settings
 * From the guide above, created .apk file can be transferred to an Android device by simply dragging and copying the file. 
 * Also, from the link below, ARBCOF.apk file can be downloaded. After the file is downloaded, it can be extracted from. zip file and copied to the Android device and it is ready to run on the device.
 
-https://drive.google.com/file/d/1TaGdJLUQHOwAT9EM8INsJBR7kiL5LVHY/view?usp=sharing
+https://drive.google.com/file/d/1b005DI9iiEh1K1VGJCPuqmFkwg1nf93d/view
 
 
 # User Manual
@@ -90,7 +90,7 @@ Operation Mode has two different functions. One of them is to learn about people
 ## Using the Augmented Reality Based Continuous Onboarding Framework
 ### Download Augmented Reality Based Continuous Onboarding Framework
 
-If you have not already downloaded the Augmented Reality Based Continuous Onboarding Framework application, you can download the apk from [here](https://drive.google.com/file/d/1TaGdJLUQHOwAT9EM8INsJBR7kiL5LVHY/view?usp=sharing )
+If you have not already downloaded the Augmented Reality Based Continuous Onboarding Framework application, you can download the apk from [here](https://drive.google.com/file/d/1b005DI9iiEh1K1VGJCPuqmFkwg1nf93d/view )
 
 
 ## Screens of the Project
