@@ -58,7 +58,7 @@ Figure 2: Build Settings
 * From the guide above, created .apk file can be transferred to an Android device by simply dragging and copying the file. 
 * Also, from the link below, ARBCOF.apk file can be downloaded. After the file is downloaded, it can be extracted from. zip file and copied to the Android device and it is ready to run on the device.
 
-https://drive.google.com/file/d/1b005DI9iiEh1K1VGJCPuqmFkwg1nf93d/view
+https://drive.google.com/file/d/1d6WfbqBjbWdrWFOB1YYecRC9eW1LwGRQ/view
 
 
 # User Manual
@@ -90,7 +90,7 @@ Operation Mode has two different functions. One of them is to learn about people
 ## Using the Augmented Reality Based Continuous Onboarding Framework
 ### Download Augmented Reality Based Continuous Onboarding Framework
 
-If you have not already downloaded the Augmented Reality Based Continuous Onboarding Framework application, you can download the apk from [here](https://drive.google.com/file/d/1b005DI9iiEh1K1VGJCPuqmFkwg1nf93d/view )
+If you have not already downloaded the Augmented Reality Based Continuous Onboarding Framework application, you can download the apk from [here](https://drive.google.com/file/d/1d6WfbqBjbWdrWFOB1YYecRC9eW1LwGRQ/view )
 
 
 ## Screens of the Project
@@ -180,6 +180,28 @@ Figure 6: Pause Menu
 | Quit  | Button | User can click this button to exit from application. |
 
 Table 5: Operation Mode User Interactions
+
+#### Test User Information
+
+You can try the app with the 
+Username: test@outlook.com
+Password: test2018
+
+Example task images to scan for Operation Mode:
+
+![](http://i65.tinypic.com/2uzqqs6.jpg)	
+
+![](http://i63.tinypic.com/esjocl.jpg)	
+
+Example person image target to scan for Orientation & Operation Mode:
+
+![](http://i67.tinypic.com/14agb6e.jpg)
+
+
+
+
+
+
 
 
 
